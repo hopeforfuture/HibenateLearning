@@ -16,6 +16,7 @@ public class Alien {
     private String name;
     private String tech;
     private LocalDate dob;
+    @OneToOne
     private Laptop laptop;
 
 }

@@ -23,11 +23,13 @@ public class AlienCreate {
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(Alien.class)
+                .addAnnotatedClass(Laptop.class)
                 .configure()
                 .buildSessionFactory();
         Session session = sf.openSession();
 
         Transaction tran = session.beginTransaction();
+        session.persist(l1);
         session.persist(al1);
         tran.commit();
         session.close();
