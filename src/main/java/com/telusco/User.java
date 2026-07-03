@@ -1,6 +1,7 @@
 package com.telusco;
 
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.Fetch;
 import lombok.Data;
 
 import java.util.List;
@@ -15,6 +16,6 @@ public class User {
     private String name;
     private String email;
     private String city;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     private List<Role> roles;
 }
