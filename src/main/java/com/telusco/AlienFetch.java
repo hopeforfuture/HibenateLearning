@@ -12,6 +12,7 @@ public class AlienFetch {
     public static void main(String[] args) {
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(Alien.class)
+                .addAnnotatedClass(Laptop.class)
                 .configure()
                 .buildSessionFactory();
         Session session = sf.openSession();
